@@ -645,7 +645,7 @@ public class Game {
 		boolean validInsert = Boolean.FALSE;
 		if (purchaseValid(amount)) {
 			player.makePurchase(amount);
-			this.sound.ejecutarSonido("assets/buying.wav");
+			sound.ejecutarSonido("assets/buying.wav");
 			printPurchaseSuccessful();
 			validInsert = Boolean.TRUE;
 		} else {
