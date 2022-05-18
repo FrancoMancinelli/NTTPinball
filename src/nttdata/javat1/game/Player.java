@@ -21,6 +21,7 @@ public class Player {
 	private int investedMoney;
 	private int lostTokens;
 	private int playedMatechs;
+	private final static Sounds sound = new Sounds();
 	
 	/* ~~ CONSTRUCTOR */
 	public Player(String name) {
@@ -195,6 +196,8 @@ public class Player {
 	public static void printBetNotValidated() {
 		StringBuffer sb = new StringBuffer();
 		
+		sound.ejecutarSonido("assets/error.wav");
+
 		sb.append("\n#-------------------------------------#\n");
 		sb.append("|    ~~~~~ ERROR AL APOSTAR ~~~~~     |\n");
 		sb.append("#-------------------------------------#\n");

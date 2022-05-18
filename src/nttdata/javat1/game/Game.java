@@ -581,6 +581,8 @@ public class Game {
 	public static void printNotMoney() {
 		StringBuffer sb = new StringBuffer();
 
+		sound.ejecutarSonido("assets/error.wav");
+
 		sb.append("\n#-------------------------------------#\n");
 		sb.append("|  ¡Ups! ~~~~~ NOT MONEY ~~~~~ ¡Ups!  |\n");
 		sb.append("#-------------------------------------#\n");
@@ -617,6 +619,8 @@ public class Game {
 	 */
 	public static void printNoValidAnswer() {
 		StringBuffer sb = new StringBuffer();
+
+		sound.ejecutarSonido("assets/error.wav");
 
 		sb.append("\n#-------------------------------------#\n");
 		sb.append("|       ~~~~ ALGO SALIO MAL ~~~~~     |\n");
@@ -730,6 +734,8 @@ public class Game {
 	public static void printPurchaseFailed() {
 		StringBuffer sb = new StringBuffer();
 
+		sound.ejecutarSonido("assets/error.wav");
+		
 		sb.append("\n#-------------------------------------#\n");
 		sb.append("|     ~~~~~ FALLÓ LA COMPRA ~~~~~     |\n");
 		sb.append("#-------------------------------------#\n");
