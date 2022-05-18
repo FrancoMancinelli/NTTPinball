@@ -22,7 +22,7 @@ public class Game {
 	/* ~~ ATRIBUTOS */
 	private Player player;
 	private List<Ball> balls = new ArrayList<Ball>(5);
-	private final Sounds sound = new Sounds();
+	private final static Sounds sound = new Sounds();
 	private int multiplier = 0;
 	private int score = 0;
 	private int bet;
@@ -78,7 +78,7 @@ public class Game {
 			answer = sc.next().toUpperCase();
 
 			/* Ejecuta un sonido */
-			this.sound.ejecutarSonido("assets/opcionMenu2.wav");
+			sound.ejecutarSonido("assets/opcionMenu2.wav");
 
 			/* Comprueba la opción respondida */
 			switch (answer) {
@@ -208,7 +208,7 @@ public class Game {
 			gameModeAnswer = sc3.next().toUpperCase();
 
 			/* Ejecuta sonido */
-			this.sound.ejecutarSonido("assets/opcionMenu2.wav");
+			sound.ejecutarSonido("assets/opcionMenu2.wav");
 
 			try {
 				Thread.sleep(3000);
@@ -229,7 +229,7 @@ public class Game {
 	 */
 	private void executeCoinSound() {
 		try {
-			this.sound.ejecutarSonido("assets/coinInserted.wav");
+			sound.ejecutarSonido("assets/coinInserted.wav");
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -271,7 +271,7 @@ public class Game {
 			e.printStackTrace();
 		}
 		/* Ejecuta un sonido */
-		this.sound.ejecutarSonido("assets/opcionMenu.wav");
+		sound.ejecutarSonido("assets/opcionMenu.wav");
 		printLauncherMenu();
 	}
 
@@ -598,6 +598,8 @@ public class Game {
 	public static void printNoTokens() {
 		StringBuffer sb = new StringBuffer();
 
+		sound.ejecutarSonido("assets/error.wav");
+		
 		sb.append("\n#-------------------------------------#\n");
 		sb.append("|        ~~~~~ SIN FICHAS ~~~~~       |\n");
 		sb.append("#-------------------------------------#\n");
@@ -875,6 +877,8 @@ public class Game {
 	public static void printErrorMenus() {
 		StringBuffer sb = new StringBuffer();
 
+		sound.ejecutarSonido("assets/error.wav");
+		
 		sb.append("\n#-------------------------------------#\n");
 		sb.append("| ERR0R! - ERR0R! --- ERR0R! - ERR0R! |\n");
 		sb.append("#-------------------------------------#\n");

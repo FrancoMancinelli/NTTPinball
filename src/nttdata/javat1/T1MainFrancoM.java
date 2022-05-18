@@ -15,6 +15,8 @@ import nttdata.javat1.game.Sounds;
  *
  */
 public class T1MainFrancoM {
+	
+	static Sounds sound = new Sounds();
 
 	/**
 	 * Método principal
@@ -24,7 +26,6 @@ public class T1MainFrancoM {
 	public static void main(String[] args) {
 		
 		/*Ejecuta un sonido de Bienvenida*/
-		Sounds sound = new Sounds();
 		sound.ejecutarSonido("assets/inicioApp.wav");
 
 		/* Hace una pausa de 10 segundos mientras suena la intro */
@@ -100,6 +101,8 @@ public class T1MainFrancoM {
 	 */
 	public static void printError() {
 		StringBuffer sb = new StringBuffer();
+		
+		sound.ejecutarSonido("assets/error.wav");
 		
 		sb.append("\n#-------------------------------------#\n");
 		sb.append("| ERR0R! - ERR0R! --- ERR0R! - ERR0R! |\n");
