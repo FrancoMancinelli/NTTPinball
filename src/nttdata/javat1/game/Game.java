@@ -217,7 +217,7 @@ public class Game {
 			}
 
 			/* Intentará iniciar un juego con la dificultad indicada */
-			startAndLaunchGame(gameModeAnswer);
+			prepareToLaunchGame(gameModeAnswer);
 
 		} while (!gameModeAnswer.equals("E") && !gameModeAnswer.equals("M") && !gameModeAnswer.equals("H")
 				&& !gameModeAnswer.equals("L"));
@@ -276,12 +276,12 @@ public class Game {
 	}
 
 	/**
-	 * Iniciará un juego y lo configurará según el modo de juego indicado por
+	 * Intenrará iniciará un juego y lo configurará según el modo de juego indicado por
 	 * parametro. Si la respuesta no es valida, imprimirá un error.
 	 * 
 	 * @param s La letra que representa cada modo de juego
 	 */
-	private void startAndLaunchGame(String s) {
+	private void prepareToLaunchGame(String s) {
 		switch (s) {
 
 		/* Configura un juego en modo EASY */
@@ -289,6 +289,7 @@ public class Game {
 			printEasyGameMode();
 			addBallsToArray(5);
 			this.multiplier = 2;
+			lunchGame();
 			break;
 
 		/* Configura un juego en modo MEDIUM */
@@ -296,6 +297,7 @@ public class Game {
 			printMediumGameMode();
 			addBallsToArray(4);
 			this.multiplier = 3;
+			lunchGame();
 			break;
 
 		/* Configura un juego en modo HARD */
@@ -303,6 +305,7 @@ public class Game {
 			printHardGameMode();
 			addBallsToArray(3);
 			this.multiplier = 4;
+			lunchGame();
 			break;
 
 		/* Configura un juego en modo LENGENDARY */
@@ -310,13 +313,16 @@ public class Game {
 			printLegendaryGameMode();
 			addBallsToArray(1);
 			this.multiplier = 5;
+			lunchGame();
 			break;
 
 		default:
 			/* Imprime un mensaje de error */
 			printErrorMenus();
 		}
+	}
 
+	private void lunchGame() {
 		/* Quita los tokens apostados al usuario */
 		player.removeTokens(this.bet);
 
@@ -329,7 +335,6 @@ public class Game {
 			e.printStackTrace();
 		}
 		gameDevelopment(balls);
-
 	}
 
 	/**
