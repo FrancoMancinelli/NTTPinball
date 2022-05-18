@@ -90,7 +90,6 @@ public class T1MainFrancoM {
 		sb.append("|        A continuación indica        |\n");
 		sb.append("|     un nickname de 3 caracteres     |\n");
 		sb.append("#-------------------------------------#\n");
-
 		
 		System.out.println(sb.toString());
 	}
