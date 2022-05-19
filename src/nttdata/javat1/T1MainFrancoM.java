@@ -81,7 +81,7 @@ public class T1MainFrancoM {
 	 * Imprime un menu de bienvenida e indicará al jugador
 	 * que debe introducir su nickname para comenzar
 	 */
-	public static void printMenuNewPlayer() {
+	private static void printMenuNewPlayer() {
 		StringBuffer sb = new StringBuffer();
 		
 		sb.append("#-------------------------------------#\n");
@@ -99,7 +99,7 @@ public class T1MainFrancoM {
 	 * Imprime un mensaje de error por introducir un nickname
 	 * que no es valido
 	 */
-	public static void printError() {
+	private static void printError() {
 		StringBuffer sb = new StringBuffer();
 		
 		sound.ejecutarSonido("assets/error.wav");

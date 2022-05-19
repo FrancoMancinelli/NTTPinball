@@ -410,7 +410,7 @@ public class Game {
 	 * @param url Url donde se encuentra alojado el sonido
 	 * @return El sonido ejecutado en forma de Clip
 	 */
-	public Clip ejecutarSonidoLoop(String url) {
+	private Clip ejecutarSonidoLoop(String url) {
 		try {
 			Clip sonido = AudioSystem.getClip();
 
@@ -559,7 +559,7 @@ public class Game {
 	 * de las fichas y pedirá indicar la cantidad
 	 * que se desea comprar.
 	 */
-	public void printCashier() {
+	private void printCashier() {
 		StringBuffer sb = new StringBuffer();
 
 		sb.append("\n#-------------------------------------#\n");
@@ -578,7 +578,7 @@ public class Game {
 	 * Imprime un mensaje de el jugador no tiene dinero suficiente
 	 * para comprar más fichas
 	 */
-	public static void printNotMoney() {
+	private static void printNotMoney() {
 		StringBuffer sb = new StringBuffer();
 
 		sound.ejecutarSonido("assets/error.wav");
@@ -597,7 +597,7 @@ public class Game {
 	 * Imprime un mensaje de que no tienes tokens suficientes para iniciar una nueva
 	 * partida. Primero compra más.
 	 */
-	public static void printNoTokens() {
+	private static void printNoTokens() {
 		StringBuffer sb = new StringBuffer();
 
 		sound.ejecutarSonido("assets/error.wav");
@@ -617,7 +617,7 @@ public class Game {
 	 * Imprime un mensaje de que algo salio mal, debido
 	 * a que se introduce un valor no valido como respuesta
 	 */
-	public static void printNoValidAnswer() {
+	private static void printNoValidAnswer() {
 		StringBuffer sb = new StringBuffer();
 
 		sound.ejecutarSonido("assets/error.wav");
@@ -662,7 +662,7 @@ public class Game {
 	 * @return True en caso de ser posible comprar esa cantidad | False en caso
 	 *         contrario
 	 */
-	public boolean purchaseValid(int amountTokens) {
+	private boolean purchaseValid(int amountTokens) {
 		boolean validated = Boolean.FALSE;
 		if (amountTokens >= 0 && (amountTokens * 5) <= player.getMoney())
 			validated = Boolean.TRUE;
@@ -714,7 +714,7 @@ public class Game {
 	/**
 	 * Imprime un mensaje de compra realizada con éxito
 	 */
-	public static void printPurchaseSuccessful() {
+	private static void printPurchaseSuccessful() {
 
 		StringBuffer sb = new StringBuffer();
 
@@ -731,7 +731,7 @@ public class Game {
 	/**
 	 * Imprime un mensaje de compra fallida
 	 */
-	public static void printPurchaseFailed() {
+	private static void printPurchaseFailed() {
 		StringBuffer sb = new StringBuffer();
 
 		sound.ejecutarSonido("assets/error.wav");
@@ -880,7 +880,7 @@ public class Game {
 	 * Imprime un error por responder mal en algún menú
 	 * 
 	 */
-	public static void printErrorMenus() {
+	private static void printErrorMenus() {
 		StringBuffer sb = new StringBuffer();
 
 		sound.ejecutarSonido("assets/error.wav");
@@ -899,7 +899,7 @@ public class Game {
 	/**
 	 * Imprime un mensaje breve y resumido de como jugar
 	 */
-	public void printHowToPlay() {
+	private void printHowToPlay() {
 		StringBuffer sb = new StringBuffer();
 
 		sb.append("\n#-------------------------------------#\n");
@@ -943,7 +943,7 @@ public class Game {
 	 * Imprime un menú de apuesta, donde se solicitará al jugador indicar cuantos
 	 * tokens quiere apostar
 	 */
-	public void printIndicateBet() {
+	private void printIndicateBet() {
 		StringBuffer sb = new StringBuffer();
 
 		sb.append("\n#-------------------------------------#\n");
@@ -960,7 +960,7 @@ public class Game {
 	/**
 	 * Imprime la información del jugador
 	 */
-	public void printPlayerInfo() {
+	private void printPlayerInfo() {
 		StringBuffer sb = new StringBuffer();
 
 		sb.append("\n#-------------------------------------#\n");
